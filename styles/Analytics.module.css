@@ -1,0 +1,82 @@
+.analytics {
+    padding: 1rem;
+  }
+  
+  .title {
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+  }
+  
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    margin-top: 0;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .change {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .tableContainer {
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+  }
+  
+  .tableContainer h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 18px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .table th {
+    background-color: rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+  }
+  
+  .table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .summary {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+  }

@@ -1,57 +1,93 @@
 .sidebar {
-    width: 250px;
-    background-color: var(--sidebar-bg);
-    padding: 1.5rem 0;
-    height: 100%;
-    border-right: 1px solid var(--border-color);
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  padding: 1rem 0;
+  position: fixed;
+  top: 70px; /* Same as header height */
+  left: 0;
+  height: calc(100vh - 70px); /* Full height minus header */
+  border-right: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  z-index: 900;
+  overflow-y: auto;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+  color: var(--foreground);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.navButton:hover {
+  background-color: var(--button-hover);
+}
+
+.navButton.active {
+  background-color: var(--button-hover);
+  border-left: 3px solid #4caf50;
+}
+
+.buttonText {
+  font-weight: 500;
+}
+
+.closeButton {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--foreground);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 270px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .open {
+    transform: translateX(0);
+  }
+  
+  .closeButton {
+    display: block;
   }
   
   .nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 0 1rem;
+    padding-top: 2.5rem;
   }
   
   .navButton {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    background-color: var(--button-bg);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 0.85rem 1rem;
     font-size: 1rem;
-    text-align: left;
-    color: var(--foreground);
-    transition: all 0.2s ease;
   }
-  
-  .navButton:hover {
-    background-color: var(--button-hover);
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 60%;
   }
-  
-  .buttonText {
-    font-weight: 500;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      border-right: none;
-      border-bottom: 1px solid var(--border-color);
-      padding: 1rem 0;
-    }
-    
-    .nav {
-      flex-direction: row;
-      overflow-x: auto;
-      padding: 0 1rem;
-    }
-    
-    .navButton {
-      white-space: nowrap;
-    }
-  }
+}
