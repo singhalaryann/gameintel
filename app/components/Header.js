@@ -5,7 +5,7 @@ import styles from '../../styles/Header.module.css';
 export default function Header({ toggleSidebar }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  
+  //
   // Check if we're on mobile
   useEffect(() => {
     const checkMobile = () => {
