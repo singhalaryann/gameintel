@@ -11,6 +11,7 @@
   left: 0;
   z-index: 1000;
   height: 70px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .logo {

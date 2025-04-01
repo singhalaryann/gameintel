@@ -69,7 +69,6 @@ export default function Home() {
         <div className={styles.content}>{renderContent()}</div>
       </div>
       {/* Overlay to close sidebar when clicked outside */}
-      {/* Overlay to close sidebar when clicked outside */}
       {sidebarOpen && (
         <div
           className={`${styles.overlay} ${styles.visible}`}
